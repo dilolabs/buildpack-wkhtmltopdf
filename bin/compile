@@ -18,7 +18,14 @@ mkdir -p $CACHE_DIR $BIN_PATH $INSTALL_PATH
 if [[ -f "$ENV_DIR/WKHTMLTOPDF_VERSION" ]]; then
   WKHTMLTOPDF_VERSION=$(cat "$ENV_DIR/WKHTMLTOPDF_VERSION")
 else
-  WKHTMLTOPDF_VERSION="0.12.6-1"
+  if [[ "$STACK" = "scalingo-18" ]] ; then
+    WKHTMLTOPDF_RELEASE="1"
+  elif [[ "$STACK" = "scalingo-20" ]] ; then
+    WKHTMLTOPDF_RELEASE="1"
+  elif [[ "$STACK" = "scalingo-22" ]] ; then
+    WKHTMLTOPDF_RELEASE="2"
+  fi
+  WKHTMLTOPDF_VERSION="0.12.6-${WKHTMLTOPDF_RELEASE}"
 fi
 
 if [[ "$STACK" = "scalingo-18" ]] ; then
