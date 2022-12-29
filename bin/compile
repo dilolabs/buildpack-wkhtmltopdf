@@ -25,6 +25,8 @@ if [[ "$STACK" = "scalingo-18" ]] ; then
   dist="bionic"
 elif [[ "$STACK" = "scalingo-20" ]] ; then
   dist="focal"
+elif [[ "$STACK" = "scalingo-22" ]] ; then
+  dist="jammy"
 else
   echo " !     Unknown STACK ${STACK}"
 fi

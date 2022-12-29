@@ -46,7 +46,7 @@ And commit this file.
 ## Troubleshooting
 
 If you run into issues when trying to deploy with this buildpack, make sure your
-app is running on the stack `scalingo-18` or `scalingo-20`. You can check this
+app is running on the stack `scalingo-18`, `scalingo-20` or `scalingo-22`. You can check this
 with:
 
 ```bash
